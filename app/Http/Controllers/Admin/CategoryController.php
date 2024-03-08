@@ -8,39 +8,27 @@ use App\Models\Category as ModelsCategory;
 use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
-
     public function index()
     {
         $categories= Category::orderby('id' ,'desc')->get();
         return view('admin.category',compact('categories'));
     }
-
-
     public function create()
     {
         //
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-
         $request->validate([
             'name' => 'required|unique:categories,name|max:255',
             'description' => 'required', // Fixed the typo here
         ]);
-
     $data=[
         'name'=>$request->name,
         'description'=>$request->description,
     ];
-
     Category::create($data);
     return redirect()->back();
-
-
     }
     /**
      * Display the specified resource.

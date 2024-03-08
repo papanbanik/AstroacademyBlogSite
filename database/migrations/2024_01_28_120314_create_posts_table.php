@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('description')->default('asf');
+            $table->text('description');
             $table->string('thumbnail')->nullable();
-            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
-
+            $table->foreignId('category_id')->nullable()->constrained('categories')->onDelete('cascade');
+            $table->integer('status')->nullable();
             $table->timestamps();
         });
     }

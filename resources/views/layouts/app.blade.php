@@ -14,8 +14,6 @@
 <!-- start of banner -->
   @include('layouts.includes.trainding')
 
-
-
 @yield('mainSection')
 
 

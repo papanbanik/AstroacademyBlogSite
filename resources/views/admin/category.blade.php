@@ -1,7 +1,6 @@
 @extends('admin.layouts.app')
 
 @section('title')
-Categories
 @endsection
 @php
     $page='Categories'
@@ -10,14 +9,15 @@ Categories
 @section('mainpart')
 <div class="card">
     <div class="card-header d-flex align-items-center justify-content-between">
-        <h3 class="card-title">Categories</h3>
+        <h3 class="card-title" style="color: black">All Categories</h3>
         <button class="btn-btn primary" data-toggle="modal" data-target="#AddCategoryModal">Add Category</button>
     </div>
     <div class="card-body">
-        <table class="table table-bordered" id="dataTable">
+        <table class="table table-bordered" id="dataTable"  style="color: black">
             <thead>
                 <tr>
-                    <th>name</th>
+                    <th>Id</th>
+                    <th>Name</th>
                     <th>Description</th>
                     <th>Action</th>
                 </tr>
@@ -29,8 +29,8 @@ Categories
                <td>{{ $category->name }}</td>
                <td>{{$category->description}}</td>
                <td>
-                <button><i class="fas fa-edit"></i></button>
-                <button><i class="fas fa-trash"></i></button>
+                <button><i class="fas fa-edit">  </i></button>
+                <button><i class="fas fa-trash"> </i></button>
                 </td>
                </tr>
                @endforeach
@@ -54,22 +54,20 @@ Categories
          <form action="{{ route('category.store') }}" method="POST">
             @csrf
          <div class="modal-body">
-                <div class="form-group">
+                <div class="form-group"  style="color: black">
                     <label for="category_name">Category_Name</label>
-                    <input type="text" class="form-control" name="name">
+                    <input type="text" class="form-control" name="name"  style="color: black">
                    </div>
-                <div class="form-group">
+                   <div class="form-group"  style="color: black">
                     <label for="category_name">Category Description</label>
-                    <textarea  class="form-control"  name="description" rows="3"></textarea>
+                    <textarea  class="form-control"  style="color: black" name="description" rows="3"></textarea>
                    </div>
-
          </div>
          <div class="modal-footer">
              <a class="btn btn-light" type="button" data-dismiss="modal">Cancel</a>
              <button class="btn btn-primary" type="submit">AddCategory</button>
          </div>
         </form>
-
      </div>
  </div>
 </div>

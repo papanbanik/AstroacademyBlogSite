@@ -1,4 +1,11 @@
+@php
+
+$posts=App\Models\post::orderby('id' ,'desc')->get();
+
+@endphp
+
 <section class="section pb-0">
+
     <div class="container">
       <div class="row">
         <div class="col-lg-4 mb-5">
@@ -132,4 +139,15 @@
         </div>
       </div>
     </div>
+
+
+    {{-- @foreach ($posts as $key=>$post)
+    <h3 style="padding-left: 500px">{{ $post->title}}</h3>
+    <img style="margin-left: 500px" class="card-img-sm" src="{{ asset('post_thumbnails/' . $post->thumbnail) }}">
+    @endforeach  --}}
+    {{-- <img style="padding-left:100px" class="card-img-sm" src="{{ asset('post_thumbnails/' . $post->thumbnail) }}"> --}}
+
+
   </section>
+
+

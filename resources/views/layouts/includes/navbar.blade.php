@@ -2,8 +2,7 @@
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-white">
         <a class="navbar-brand order-1" href="index.html">
-          <img class="img-fluid" width="100px" src="{{asset('usr_assets/images/logo.png')}}"
-            alt="Astroacademy">
+            <img class="img-fluid" width="100px" src="{{asset('usr_assets/images/logo.png')}}" alt="Astroacademy">
         </a>
         <div class="collapse navbar-collapse text-center order-lg-2 order-3" id="navigation">
           <ul class="navbar-nav mx-auto">
@@ -12,18 +11,17 @@
                 aria-expanded="false">
                 Astro-Topic <i class="ti-angle-down ml-1"></i>
               </a>
+
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="https://science.nasa.gov/universe/galaxies/">Galaxy</a>
 
-                <a class="dropdown-item" href="index-full-left.html">Solar System</a>
+                <a class="dropdown-item" href="index-full-left.html">Sun</a>
 
                 <a class="dropdown-item" href="index-full-right.html">Universe</a>
 
-                <a class="dropdown-item" href="index-list.html">Sun</a>
-
                 <a class="dropdown-item" href="index-list-left.html">Blackhole</a>
-
               </div>
+
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -32,12 +30,10 @@
               </a>
               <div class="dropdown-menu">
 
-                <a class="dropdown-item" href="https://bd.linkedin.com/in/papan-banik-3a7338161">About Me</a>
-
-                <a class="dropdown-item" href="about-us.html">About Us</a>
+                <a class="dropdown-item" href="{{ asset('assets/personal.php')}}">About Me</a>
+                <a class="dropdown-item" href="#">About Us</a>
               </div>
             </li>
-
 
             <li class="nav-item dropdown">
               <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -91,10 +87,9 @@
             <a class="dropdown-item" href="{{ route('login') }}">Login</a>
             <a class="dropdown-item" href="{{ route('register') }}">Register</a>
             @endauth
-
           </div>
-          </li>
-            </ul>
+        </li>
+        </ul>
           <!-- search -->
           <form class="search-bar">
             <input id="search-query" name="s" type="search" placeholder="Type &amp; Hit Enter...">
