@@ -1,0 +1,22 @@
+name: Azure Static Web Apps Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    name: Build and Deploy
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Upload to Azure Static Web Apps
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: 0319513c0d1d04b164f304f8e428ee1d11d64b32ca875c2200312d24a705749806-878e13a8-b4fe-4fa7-9ac3-0b6506a374e701000110cc734010
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: "upload"
+          app_location: "/"
+          output_location: "/"
